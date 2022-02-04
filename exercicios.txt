@@ -1,0 +1,70 @@
+''' Exercício 1: Fazer a instrução para criar um banco de dados de nome
+bdteste no SGBD PostgreSQL.
+Observações:
+• O seu programa deverá estar no módulo principal.py;
+• Será necessário importar as classes do módulo codigo.py. '''
+
+from aula.codigo import *
+
+a = Banco('dbteste')
+
+''' Exercício 2: Completar o código do Exercício 1 para criar a tabela tbcliente
+no bdteste. '''
+
+from aula.codigo import *
+
+a = Banco('dbteste')
+a.createTable()
+
+''' Exercício 3: Inserir os seguintes registros na tbcliente e depois executar um
+select para ver os registros da tabela. '''
+
+from aula.codigo import *
+
+a = Banco('dbteste')
+
+a.createTable()
+
+a.insert('Ana Maria', 21)
+a.insert('Pedro Paulo', 29)
+a.insert('Mara Lima', 25)
+
+a.select()
+
+''' Exercício 4: Atualizar o registro cujo idcliente é 2, assim como é mostrado a 
+segui:
+(1, 'Ana Maria', 21)
+(2, 'Gabriel Novaes', 30)
+(3, 'Maria Lima', 25)
+'''
+
+from aula.codigo import *
+
+a = Banco('dbteste')
+
+a.select()
+
+a.update(2, 'Gabriel Novaes', 30)
+
+''' Exercício 5: Excluir o registro cujo idcliente é 1, assim como é mostrado a
+seguir:
+(2, 'Gabriel Novaes', 30)
+(3, 'Mara Lima', 25)
+
+from aula.codigo import *
+
+a = Banco('dbteste')
+
+a.select()
+
+a.delete(1)
+
+''' Exercício 6: Deletar o bdteste.
+
+from aula.codigo import *
+
+a = Banco('dbteste')
+
+a.select()
+
+a.dropDatabase()
